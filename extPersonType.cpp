@@ -47,3 +47,48 @@ void extPersonType::setPhoneNumber(std::string phone) {
 std::string extPersonType::getPhoneNumber() const {
     return phoneNumber;
 }
+
+bool extPersonType::operator==(const extPersonType& other) const {
+    std::string key1 = getLastName() + " " + getFirstName();
+    std::string key2 = other.getLastName() + " " + other.getFirstName();
+    return key1 == key2;
+}
+
+bool extPersonType::operator!=(const extPersonType& other) const {
+    return !(*this == other);
+}
+
+bool extPersonType::operator>=(const extPersonType& other) const {
+    std::string key1 = getLastName() + " " + getFirstName();
+    std::string key2 = other.getLastName() + " " + other.getFirstName();
+    return key1 >= key2;
+}
+
+// Additional getter functions
+std::string extPersonType::getAddress() const {
+    return address.getAddress();
+}
+
+std::string extPersonType::getCity() const {
+    return address.getCity();
+}
+
+std::string extPersonType::getState() const {
+    return address.getState();
+}
+
+int extPersonType::getZipcode() const {
+    return address.getZipcode();
+}
+
+int extPersonType::getMonth() const {
+    return birthDate.getMonth();
+}
+
+int extPersonType::getDay() const {
+    return birthDate.getDay();
+}
+
+int extPersonType::getYear() const {
+    return birthDate.getYear();
+}
