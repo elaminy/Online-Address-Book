@@ -19,8 +19,22 @@ public:
     void setRelationship(std::string relation);
     std::string getRelationship() const;
 
-    void setPhoneNumber(std::string phone); // Ensure this declaration is correct
+    void setPhoneNumber(std::string phone);
     std::string getPhoneNumber() const;
+
+    // Overloaded relational operators
+    bool operator==(const extPersonType& other) const;
+    bool operator!=(const extPersonType& other) const;
+    bool operator>=(const extPersonType& other) const;
+
+    // Additional getter functions
+    std::string getAddress() const;
+    std::string getCity() const;
+    std::string getState() const;
+    int getZipcode() const;
+    int getMonth() const;
+    int getDay() const;
+    int getYear() const;
 
 private:
     addressType address;
